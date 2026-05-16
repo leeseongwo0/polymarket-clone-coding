@@ -55,7 +55,7 @@ npx playwright install chromium
 | 2주 차 | 사용자가 만지는 제품 흐름 만들기 | 마켓 목록/상세, 거래 패널, 포트폴리오, localStorage 상태, 모의 정산 | 마켓 보기 → YES/NO 거래 → 확률/포지션 업데이트 → 모의 정산을 완료합니다. |
 | 3주 차 | 학습 완성도, QA, 배포 준비 | 목업 지갑, 학습 문서, E2E 테스트, 배포 문서, 포트폴리오 설명 | 전체 품질 확인이 통과하고 배포 또는 정확한 배포 막힘이 문서화됩니다. |
 
-개발 운영표는 [`docs/3-week-development-workflow.md`](docs/3-week-development-workflow.md), 학습 일정은 [`docs/curriculum-3-weeks.md`](docs/curriculum-3-weeks.md), 초보자 배포 절차는 [`docs/deployment.md`](docs/deployment.md)를 보세요.
+개발 운영표는 [`docs/3-week-development-workflow.md`](docs/3-week-development-workflow.md), 주차별 학습 폴더는 [`docs/week-1-foundation/`](docs/week-1-foundation/), [`docs/week-2-market-flow/`](docs/week-2-market-flow/), [`docs/week-3-polish-deploy/`](docs/week-3-polish-deploy/)를 보세요. 전체 커리큘럼은 [`docs/curriculum-3-weeks.md`](docs/curriculum-3-weeks.md), 초보자 배포 절차는 [`docs/deployment.md`](docs/deployment.md)에 있습니다.
 
 ## 프로젝트 구조
 
@@ -67,7 +67,7 @@ src/lib/market-engine.ts     순수 TypeScript 예측시장 장난감 모델
 src/lib/portfolio-store.ts   클라이언트 localStorage 도우미
 tests/unit/                  Vitest 도메인 테스트
 e2e/                         Playwright 스모크 테스트
-docs/                        안전, 커리큘럼, AI 학습, 배포, 포트폴리오, 지갑, 문제 해결 문서
+docs/                        안전, 커리큘럼, 주차별 학습 폴더, AI 학습, 배포, 포트폴리오 문서
 ```
 
 ## 배포
