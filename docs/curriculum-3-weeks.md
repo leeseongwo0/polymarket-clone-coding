@@ -1,54 +1,54 @@
-# 3-Week Curriculum
+# 3주 커리큘럼
 
-This schedule is a proposed learning path. It keeps the mock wallet as the safe default and avoids real wallet dependencies unless a future task explicitly confirms that expansion.
+이 일정은 제안 학습 루트입니다. 목업 지갑을 안전한 기본값으로 유지하고, 미래 작업에서 명확히 승인되기 전까지 실제 지갑 의존성은 추가하지 않습니다.
 
-## Beginner day-by-day checkpoints
+## 초보자 일별 체크포인트
 
-- **Day 1:** install dependencies, run the dev server, read the safety scope.
-- **Day 2:** inspect seed markets and market types.
-- **Day 3:** run unit tests and explain the market engine in your own words.
-- **Day 4–5:** connect the market engine to the UI and verify one YES trade manually.
-- **Day 6–7:** write down what is still confusing and ask your AI assistant for explanations with exact file references.
-- **Day 8–10:** complete NO trade, portfolio, and simulated settlement flows.
-- **Day 11–14:** add learning callouts and run E2E/manual QA.
-- **Day 15–18:** try the mock wallet, polish docs, and prepare portfolio notes.
-- **Day 19–21:** run final checks and deploy or document the exact deployment blocker.
+- **1일 차:** 의존성을 설치하고 개발 서버를 실행한 뒤 안전 범위를 읽습니다.
+- **2일 차:** 시드 마켓과 마켓 타입을 살펴봅니다.
+- **3일 차:** 단위 테스트를 실행하고 마켓 엔진을 자기 말로 설명합니다.
+- **4–5일 차:** 마켓 엔진과 UI 연결을 확인하고 YES 거래 하나를 수동 검증합니다.
+- **6–7일 차:** 아직 헷갈리는 내용을 적고, AI 어시스턴트에게 정확한 파일 참조와 함께 설명을 요청합니다.
+- **8–10일 차:** NO 거래, 포트폴리오, 모의 정산 흐름을 완성하거나 읽어봅니다.
+- **11–14일 차:** 학습 콜아웃을 확인하고 E2E/수동 QA를 실행합니다.
+- **15–18일 차:** 목업 지갑을 실험하고 문서를 다듬은 뒤 포트폴리오 메모를 준비합니다.
+- **19–21일 차:** 최종 확인을 실행하고 배포하거나, 배포를 막는 정확한 이유를 문서화합니다.
 
-## Week 1 — Foundation and mechanics
+## 1주 차 — 기초와 메커니즘
 
-- Read the README and safety scope.
-- Start the Next.js app.
-- Study `src/types/market.ts` and `src/data/markets.ts`.
-- Implement or inspect `src/lib/market-engine.ts`.
-- Run unit tests.
+- README와 안전 범위를 읽습니다.
+- Next.js 앱을 시작합니다.
+- `src/types/market.ts`와 `src/data/markets.ts`를 공부합니다.
+- `src/lib/market-engine.ts`를 구현하거나 읽어봅니다.
+- 단위 테스트를 실행합니다.
 
-Exit criteria:
+종료 기준:
 
-- `npm run test` passes.
-- You can explain why buying YES changes the YES probability.
-- You can explain why this is not a real exchange.
+- `npm run test`가 통과합니다.
+- YES를 사면 왜 YES 확률이 바뀌는지 설명할 수 있습니다.
+- 이 앱이 왜 실제 거래소가 아닌지 설명할 수 있습니다.
 
-## Week 2 — Product flow
+## 2주 차 — 제품 흐름
 
-- Build or inspect the home market list.
-- Build or inspect the market detail page.
-- Use the trade panel with play credits.
-- Resolve a demo market and read the simulated settlement explanation.
+- 홈 마켓 목록을 만들거나 읽어봅니다.
+- 마켓 상세 페이지를 만들거나 읽어봅니다.
+- 플레이 크레딧으로 거래 패널을 사용합니다.
+- 데모 마켓을 정산하고 모의 정산 설명을 읽습니다.
 
-Exit criteria:
+종료 기준:
 
-- You can complete market view → YES/NO choice → position/probability update → simulated settlement.
-- You can point to the client-only state and pure domain logic.
+- 마켓 보기 → YES/NO 선택 → 포지션/확률 업데이트 → 모의 정산 흐름을 완료할 수 있습니다.
+- 클라이언트 전용 상태와 순수 도메인 로직이 어디 있는지 짚을 수 있습니다.
 
-## Week 3 — Wallet, quality, deployment, portfolio
+## 3주 차 — 지갑, 품질, 배포, 포트폴리오
 
-- Try the mock wallet experiment.
-- Read the vibe-coding and troubleshooting docs.
-- Run lint, tests, build, and E2E.
-- Deploy or prepare deployment notes.
-- Write your portfolio explanation.
+- 목업 지갑 실험을 해봅니다.
+- AI 학습 가이드와 문제 해결 문서를 읽습니다.
+- lint, 테스트, 빌드, E2E를 실행합니다.
+- 배포하거나 배포 메모를 준비합니다.
+- 포트폴리오 설명을 작성합니다.
 
-Exit criteria:
+종료 기준:
 
-- `npm run lint`, `npm run test`, `npm run build`, and `npm run test:e2e` pass or any exact gap is documented.
-- You can explain the safety boundaries and why mock wallet is the default.
+- `npm run lint`, `npm run test`, `npm run build`, `npm run test:e2e`가 통과하거나 정확한 미해결 사유가 문서화됩니다.
+- 안전 경계와 목업 지갑이 기본값인 이유를 설명할 수 있습니다.

@@ -1,21 +1,21 @@
-# Wallet Experiment
+# 지갑 실험
 
-The v1 wallet experiment is a mock wallet UX. It is required, but it is intentionally non-blocking and safe.
+v1 지갑 실험은 목업 지갑 UX입니다. 필수로 포함하지만, 의도적으로 안전하고 핵심 흐름을 막지 않습니다.
 
-## What it does
+## 하는 일
 
-- Lets the learner click a connect/disconnect button.
-- Shows a generated demo address.
-- Explains that no real wallet, signature, seed phrase, RPC, or mainnet is involved.
-- Allows the market simulation to work even if the mock wallet is disconnected.
+- 학습자가 연결/해제 버튼을 누를 수 있습니다.
+- 생성된 데모 주소를 보여줍니다.
+- 실제 지갑, 서명, 시드 문구, RPC, 메인넷이 없다고 설명합니다.
+- 목업 지갑이 연결되지 않아도 마켓 시뮬레이션은 동작합니다.
 
-## What it does not do
+## 하지 않는 일
 
-- It does not use WalletConnect.
-- It does not use RainbowKit or wagmi in v1 core.
-- It does not connect to Sepolia, mainnet, or any blockchain.
-- It does not sign transactions.
+- WalletConnect를 사용하지 않습니다.
+- v1 핵심 범위에서 RainbowKit이나 wagmi를 사용하지 않습니다.
+- Sepolia, 메인넷, 어떤 블록체인에도 연결하지 않습니다.
+- 트랜잭션에 서명하지 않습니다.
 
-## Future extension
+## 미래 확장
 
-A future confirmed extension could add RainbowKit/wagmi with a testnet-only guide. That would require explicit confirmation because it introduces project IDs, RPC reliability, and extra beginner setup friction.
+미래에 명확히 승인된 확장에서는 RainbowKit/wagmi와 테스트넷 전용 가이드를 추가할 수 있습니다. 하지만 프로젝트 ID, RPC 안정성, 초보자 설정 부담이 생기므로 명시적 확인이 필요합니다.

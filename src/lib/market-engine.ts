@@ -38,15 +38,15 @@ export function applyTrade(args: {
   const stake = normalizeStake(args.stake);
 
   if (market.status === "resolved") {
-    throw new Error("Resolved demo markets are closed for new play-credit trades.");
+    throw new Error("정산 완료된 데모 마켓에는 새 플레이 크레딧 거래를 할 수 없습니다.");
   }
 
   if (stake <= 0) {
-    throw new Error("Enter a play-credit stake greater than 0.");
+    throw new Error("0보다 큰 플레이 크레딧 지분을 입력하세요.");
   }
 
   if (stake > portfolio.balance) {
-    throw new Error("Your play-credit stake cannot exceed your available balance.");
+    throw new Error("플레이 크레딧 지분은 사용 가능한 잔액을 초과할 수 없습니다.");
   }
 
   const probabilityBefore = calculateYesProbability(market);

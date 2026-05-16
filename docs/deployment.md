@@ -1,10 +1,10 @@
-# Deployment Guide
+# 배포 가이드
 
-This project is designed for a beginner-friendly Vercel deployment using npm.
+이 프로젝트는 초보자가 npm으로 Vercel에 배포하기 쉽도록 구성했습니다.
 
-## Before deploying
+## 배포 전 확인
 
-Run these locally:
+로컬에서 아래 명령을 실행합니다.
 
 ```bash
 npm run lint
@@ -13,29 +13,29 @@ npm run build
 npm run test:e2e
 ```
 
-If E2E is blocked, write down the exact blocker before sharing the project.
+E2E가 막히면 프로젝트를 공유하기 전에 정확한 막힘 원인을 적어둡니다.
 
-## GitHub path
+## GitHub 경로
 
-1. Create a GitHub repository.
-2. Push this project.
-3. Confirm `package.json` includes these scripts: `dev`, `build`, `start`, `lint`, `test`, `test:e2e`.
-4. Confirm the README says this is simulation-only and not affiliated with Polymarket.
+1. GitHub 레포를 만듭니다.
+2. 이 프로젝트를 push합니다.
+3. `package.json`에 `dev`, `build`, `start`, `lint`, `test`, `test:e2e` 스크립트가 있는지 확인합니다.
+4. README에 이 앱이 시뮬레이션 전용이며 Polymarket과 공식 제휴가 없다는 문장이 있는지 확인합니다.
 
-## Vercel path
+## Vercel 경로
 
-1. Open Vercel and choose **Add New Project**.
-2. Import the GitHub repository.
-3. Framework preset: **Next.js**.
-4. Package manager: **npm**.
-5. Build command: `npm run build`.
-6. Output directory: leave the Next.js default.
-7. Deploy.
+1. Vercel을 열고 **Add New Project**를 선택합니다.
+2. GitHub 레포를 import합니다.
+3. Framework preset은 **Next.js**로 둡니다.
+4. Package manager는 **npm**을 선택합니다.
+5. Build command는 `npm run build`입니다.
+6. Output directory는 Next.js 기본값으로 둡니다.
+7. Deploy를 누릅니다.
 
-## Portfolio proof to save
+## 저장해 둘 포트폴리오 증거
 
-- Deployed URL.
-- Screenshot of the market detail page after a simulated YES or NO trade.
-- Screenshot or notes from the mock wallet experiment.
-- Command outputs for lint, test, build, and E2E.
-- A short note that the app uses play credits only and has no real money/mainnet behavior.
+- 배포 URL
+- YES 또는 NO 모의 거래 후 마켓 상세 페이지 스크린샷
+- 목업 지갑 실험 스크린샷 또는 메모
+- lint, test, build, E2E 명령 출력
+- 앱이 플레이 크레딧만 사용하고 실제 돈/메인넷 동작이 없다는 짧은 설명

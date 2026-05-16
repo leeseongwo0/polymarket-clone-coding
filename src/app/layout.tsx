@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Polymarket Mechanics Lab",
-  description:
-    "A beginner-friendly, simulation-only clone-coding lab for prediction-market mechanics.",
+  title: "폴리마켓 메커니즘 실험실",
+  description: "초보자가 예측시장 원리를 안전하게 배우는 시뮬레이션 전용 클론코딩 실습입니다.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

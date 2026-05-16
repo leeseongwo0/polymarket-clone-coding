@@ -9,7 +9,7 @@ interface MarketCardProps {
 
 export function MarketCard({ market }: MarketCardProps) {
   const yesProbability = calculateYesProbability(market);
-  const statusLabel = market.status === "resolved" ? `Resolved ${market.resolvedOutcome?.toUpperCase()}` : "Open demo";
+  const statusLabel = market.status === "resolved" ? `정산 완료: ${market.resolvedOutcome?.toUpperCase()}` : "열린 데모";
 
   return (
     <Link
@@ -24,8 +24,8 @@ export function MarketCard({ market }: MarketCardProps) {
       <p className="mb-5 line-clamp-3 text-sm leading-6 text-slate-300">{market.description}</p>
       <div className="grid grid-cols-3 gap-3 text-sm">
         <Metric label="YES" value={formatProbability(yesProbability)} />
-        <Metric label="Volume" value={formatCredits(market.playVolume)} />
-        <Metric label="Closes" value={formatShortDate(market.closesAt)} />
+        <Metric label="거래량" value={formatCredits(market.playVolume)} />
+        <Metric label="마감" value={formatShortDate(market.closesAt)} />
       </div>
     </Link>
   );

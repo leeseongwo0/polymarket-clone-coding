@@ -2,7 +2,7 @@
   "name": "polymarket-mechanics-lab",
   "version": "0.1.0",
   "private": true,
-  "description": "Beginner-friendly Polymarket-inspired clone-coding lab focused on safe prediction-market mechanics.",
+  "description": "초보자가 예측시장 원리를 안전하게 배우는 Polymarket 영감의 시뮬레이션 전용 클론코딩 실습입니다.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

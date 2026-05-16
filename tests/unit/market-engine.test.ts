@@ -5,15 +5,15 @@ import type { Market } from "@/types/market";
 function openMarket(): Market {
   return {
     slug: "demo",
-    title: "Demo market",
-    description: "Educational market",
-    category: "Test",
+    title: "데모 마켓",
+    description: "교육용 마켓",
+    category: "테스트",
     closesAt: "2026-06-01",
     status: "open",
     yesPool: 50,
     noPool: 50,
     playVolume: 100,
-    learningGoal: "Test market mechanics",
+    learningGoal: "마켓 메커니즘 테스트",
   };
 }
 
@@ -42,19 +42,19 @@ describe("market-engine", () => {
 
   it("rejects a stake above the available balance", () => {
     expect(() => applyTrade({ market: openMarket(), portfolio: createDefaultPortfolio(), outcome: "yes", stake: 1001 })).toThrow(
-      /cannot exceed/i,
+      /초과할 수 없습니다/i,
     );
   });
 
   it("rejects zero, negative, and non-finite stakes", () => {
     expect(() => applyTrade({ market: openMarket(), portfolio: createDefaultPortfolio(), outcome: "yes", stake: 0 })).toThrow(
-      /greater than 0/i,
+      /0보다 큰/i,
     );
     expect(() => applyTrade({ market: openMarket(), portfolio: createDefaultPortfolio(), outcome: "yes", stake: -5 })).toThrow(
-      /greater than 0/i,
+      /0보다 큰/i,
     );
     expect(() => applyTrade({ market: openMarket(), portfolio: createDefaultPortfolio(), outcome: "yes", stake: Number.NaN })).toThrow(
-      /greater than 0/i,
+      /0보다 큰/i,
     );
   });
 
@@ -82,7 +82,7 @@ describe("market-engine", () => {
   it("rejects new trades after a market is resolved", () => {
     const market: Market = { ...openMarket(), status: "resolved", resolvedOutcome: "yes" };
 
-    expect(() => applyTrade({ market, portfolio: createDefaultPortfolio(), outcome: "yes", stake: 10 })).toThrow(/closed/i);
+    expect(() => applyTrade({ market, portfolio: createDefaultPortfolio(), outcome: "yes", stake: 10 })).toThrow(/거래를 할 수 없습니다/i);
   });
 
   it("preserves an already resolved market outcome during simulated settlement", () => {
@@ -93,5 +93,4 @@ describe("market-engine", () => {
     expect(settled.market.resolvedOutcome).toBe("yes");
     expect(settled.settlement.outcome).toBe("yes");
   });
-
 });

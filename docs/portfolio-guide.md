@@ -1,33 +1,32 @@
-# Portfolio Guide
+# 포트폴리오 가이드
 
-## One-paragraph project story
+## 한 문단 프로젝트 스토리
 
-After `npm run lint`, `npm run test`, `npm run build`, and `npm run test:e2e` pass, you can say:
+`npm run lint`, `npm run test`, `npm run build`, `npm run test:e2e`가 통과한 뒤 이렇게 말할 수 있습니다.
 
-I built Polymarket Mechanics Lab, a simulation-only prediction-market clone-coding app for beginners that is not affiliated with Polymarket. It teaches market browsing, YES/NO choices, probability movement, portfolio changes, and simulated settlement using play credits. I used Next.js, TypeScript, Tailwind CSS, a pure TypeScript domain engine, unit tests, E2E tests, and beginner-facing docs. I intentionally excluded real money, mainnet, financial advice, production trading systems, and official Polymarket branding.
+저는 초보자를 위한 시뮬레이션 전용 예측시장 클론코딩 앱인 폴리마켓 메커니즘 실험실을 만들었습니다. 이 프로젝트는 Polymarket과 공식 제휴가 없으며, 마켓 탐색, YES/NO 선택, 확률 움직임, 포트폴리오 변화, 플레이 크레딧 기반 모의 정산을 학습하도록 설계했습니다. Next.js, TypeScript, Tailwind CSS, 순수 TypeScript 도메인 엔진, 단위 테스트, E2E 테스트, 초보자용 한국어 문서를 사용했습니다. 실제 돈, 메인넷, 금융 조언, 프로덕션 거래 시스템, 공식 Polymarket 브랜딩은 의도적으로 제외했습니다.
 
-## Architecture talking points
+## 아키텍처 설명 포인트
 
-- **Next.js App Router** for a deployable app structure.
-- **Pure domain engine** in `src/lib/market-engine.ts` for testable mechanics.
-- **Read-only route handler** to demonstrate a backend boundary without production complexity.
-- **Client-only localStorage state** for play-credit portfolio and demo market changes.
-- **Mock wallet** for safe wallet UX learning without credentials, signatures, or network setup.
+- **Next.js App Router**로 배포 가능한 앱 구조를 구성했습니다.
+- **순수 도메인 엔진**을 `src/lib/market-engine.ts`에 두어 메커니즘을 테스트하기 쉽게 만들었습니다.
+- **읽기 전용 route handler**로 프로덕션 복잡도 없이 백엔드 경계를 보여줍니다.
+- **클라이언트 전용 localStorage 상태**로 플레이 크레딧 포트폴리오와 데모 마켓 변화를 저장합니다.
+- **목업 지갑**으로 자격 증명, 서명, 네트워크 설정 없이 안전하게 지갑 UX를 학습합니다.
 
-## Tradeoffs
+## 트레이드오프
 
-- The market model is intentionally approximate.
-- The wallet is mock by default because real wallet tooling would add setup friction.
-- The app is Polymarket-inspired but not a pixel-perfect clone.
-- Docs are part of the product because the target learner is a beginner.
+- 마켓 모델은 의도적으로 근사치입니다.
+- 실제 지갑 도구는 설정 난이도를 높이므로 v1에서는 목업이 기본입니다.
+- 이 앱은 Polymarket에서 영감을 받았지만 픽셀 단위 복제물이 아닙니다.
+- 대상 학습자가 초보자이므로 문서도 제품의 일부로 다룹니다.
 
+## 완전히 테스트하지 못한 것이 있다면
 
-## If something was not fully tested
+과장하지 말고 정확히 적습니다. 예시:
 
-Be precise instead of overclaiming. For example:
+> 단위 테스트와 프로덕션 빌드는 통과했습니다. 제 환경에서 Playwright 브라우저 설치가 실패해 E2E는 완료하지 못했습니다. 대신 마켓 보기, YES/NO 거래, 모의 정산, 목업 지갑에 대한 수동 QA 체크리스트는 통과했습니다.
 
-> Unit tests and production build passed. E2E was not completed because Playwright browser installation failed on my machine; the manual QA checklist passed for market view, YES/NO trade, simulated settlement, and mock wallet.
+## 복사해서 쓸 안전 문구
 
-## Copy-paste safety line
-
-This project is not affiliated with Polymarket. It uses play credits only and does not include real money, mainnet, financial advice, or production trading behavior.
+이 프로젝트는 Polymarket과 공식 제휴가 없습니다. 플레이 크레딧만 사용하며 실제 돈, 메인넷, 금융 조언, 프로덕션 거래 동작을 포함하지 않습니다.

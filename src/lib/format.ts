@@ -3,11 +3,9 @@ export function formatProbability(value: number): string {
 }
 
 export function formatCredits(value: number): string {
-  return `${new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(value)} play credits`;
+  return `${new Intl.NumberFormat("ko-KR", { maximumFractionDigits: 2 }).format(value)} 플레이 크레딧`;
 }
 
 export function formatShortDate(value: string): string {
-  return new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(
-    new Date(value),
-  );
+  return new Intl.DateTimeFormat("ko-KR", { year: "numeric", month: "long", day: "numeric" }).format(new Date(value));
 }

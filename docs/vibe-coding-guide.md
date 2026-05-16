@@ -1,104 +1,104 @@
-# Vibe-Coding Guide
+# AI 바이브코딩 가이드
 
-Use this guide when building with an AI assistant. The point is not to paste one giant prompt. Work in small loops: ask, inspect, run, fix, explain.
+AI 어시스턴트와 함께 만들 때 이 문서를 사용하세요. 핵심은 거대한 프롬프트 하나를 붙여 넣는 것이 아닙니다. 작게 반복하세요: 묻기, 살펴보기, 실행하기, 고치기, 설명하기.
 
-## Loop
+## 반복 루프
 
-1. **State the tiny goal** — one feature or test at a time.
-2. **Ask for a plan** — request files, functions, and acceptance checks.
-3. **Implement** — let the assistant propose code, but inspect the diff.
-4. **Run checks** — use npm scripts.
-5. **Debug with evidence** — paste exact error output.
-6. **Ask for explanation** — make sure you can describe the change.
+1. **작은 목표 말하기** — 기능이나 테스트 하나씩 진행합니다.
+2. **계획 요청하기** — 파일, 함수, 통과 기준을 요청합니다.
+3. **구현하기** — 어시스턴트가 코드를 제안하더라도 diff를 직접 읽습니다.
+4. **검사 실행하기** — npm 스크립트를 사용합니다.
+5. **증거로 디버깅하기** — 정확한 오류 출력을 붙여 넣습니다.
+6. **설명 요청하기** — 변경 내용을 자기 말로 설명할 수 있어야 합니다.
 
-## Starter prompts
+## 시작 프롬프트
 
-### Scaffold
+### 스캐폴드
 
 ```text
-Create a beginner-friendly Next.js App Router structure for this PRD. Keep real money, mainnet, and financial advice out of scope. Explain each generated file in one sentence.
+이 PRD를 바탕으로 초보자 친화적인 Next.js App Router 구조를 만들어줘. 실제 돈, 메인넷, 금융 조언은 범위 밖으로 유지하고, 생성한 각 파일을 한 문장으로 설명해줘.
 ```
 
-### Market engine
+### 마켓 엔진
 
 ```text
-Implement pure TypeScript functions for a toy YES/NO probability model. Add unit tests for buying YES, buying NO, invalid stake, and simulated settlement. Do not add production exchange logic.
+장난감 YES/NO 확률 모델을 순수 TypeScript 함수로 구현해줘. YES 구매, NO 구매, 잘못된 지분, 모의 정산에 대한 단위 테스트를 추가해줘. 프로덕션 거래소 로직은 넣지 마.
 ```
 
 ### UI
 
 ```text
-Build a market detail page with a trade panel. Keep the UI Polymarket-inspired but do not copy brand assets or pixel-perfect layouts. Add learning callouts that explain the toy model.
+거래 패널이 있는 마켓 상세 페이지를 만들어줘. UI는 예측시장 제품에서 영감을 받되 브랜드 자산이나 픽셀 단위 레이아웃은 복사하지 마. 장난감 모델을 설명하는 학습 콜아웃도 추가해줘.
 ```
 
-### Debugging
+### 디버깅
 
 ```text
-Here is the exact error output. Identify the likely root cause, the smallest fix, and which npm command I should rerun after the fix.
+아래가 정확한 오류 출력이야. 가장 가능성 높은 원인, 가장 작은 수정, 수정 뒤 다시 실행할 npm 명령을 알려줘.
 ```
 
-### Portfolio explanation
+### 포트폴리오 설명
 
 ```text
-Turn this project into a portfolio story for a beginner developer. Highlight architecture, safety boundaries, tests, and what is intentionally out of scope.
+이 프로젝트를 초보 개발자 포트폴리오 스토리로 정리해줘. 아키텍처, 안전 경계, 테스트, 의도적으로 제외한 범위를 강조해줘.
 ```
 
-## Testing prompts
+## 테스트 프롬프트
 
 ```text
-Write Vitest tests for this pure function before changing UI code. Cover the happy path, invalid inputs, and one edge case. After the tests, explain what behavior each test protects.
-```
-
-```text
-This E2E test failed. Here is the Playwright error and the visible UI text. Diagnose whether the selector is wrong, the UI behavior is wrong, or the test expectation is too broad.
-```
-
-## Documentation prompts
-
-```text
-Update the beginner docs for this feature. Include: what changed, why it matters, the command to verify it, and one common mistake a learner might make.
-```
-
-## Deployment prompts
-
-```text
-Review this README deployment section for a beginner using GitHub and Vercel. Check whether the build command, npm path, environment assumptions, and portfolio proof are clear.
-```
-
-## Paste exact evidence patterns
-
-When debugging with AI, paste the exact evidence:
-
-```text
-Command: npm run build
-Observed output:
-<paste the first full error block>
-Expected: production build succeeds
-What changed right before this: <file or feature>
+UI 코드를 바꾸기 전에 이 순수 함수의 Vitest 테스트를 작성해줘. 정상 흐름, 잘못된 입력, 엣지 케이스 하나를 포함하고, 각 테스트가 어떤 동작을 보호하는지 설명해줘.
 ```
 
 ```text
-Command: npm run test:e2e
-Observed output:
-<paste failing test name and locator error>
-Browser state: <what you saw manually>
+이 E2E 테스트가 실패했어. Playwright 오류와 화면에 보이는 UI 텍스트는 아래와 같아. 셀렉터가 잘못됐는지, UI 동작이 잘못됐는지, 테스트 기대값이 너무 넓은지 진단해줘.
 ```
 
-## Common AI mistakes to catch
+## 문서화 프롬프트
 
-- Adding real wallet dependencies when the task only needs the mock wallet.
-- Using dollar signs or USD language instead of play credits.
-- Calling the app a trading or betting product.
-- Copying Polymarket branding instead of creating an inspired educational UI.
-- Hiding errors by deleting tests instead of fixing behavior.
-- Adding a database or auth flow before the beginner v1 needs it.
+```text
+이 기능에 맞춰 초보자 문서를 업데이트해줘. 포함할 내용: 무엇이 바뀌었는지, 왜 중요한지, 검증 명령, 학습자가 흔히 할 수 있는 실수 하나.
+```
 
-## Common errors by area
+## 배포 프롬프트
 
-| Area | Common error | First check |
+```text
+GitHub와 Vercel을 쓰는 초보자를 기준으로 README 배포 섹션을 리뷰해줘. 빌드 명령, npm 경로, 환경 가정, 포트폴리오 증거가 명확한지 확인해줘.
+```
+
+## 정확한 증거 붙여 넣기 패턴
+
+AI와 디버깅할 때는 정확한 증거를 붙여 넣습니다.
+
+```text
+명령: npm run build
+관찰한 출력:
+<첫 번째 전체 오류 블록 붙여 넣기>
+기대값: 프로덕션 빌드 성공
+바로 직전에 바꾼 것: <파일 또는 기능>
+```
+
+```text
+명령: npm run test:e2e
+관찰한 출력:
+<실패한 테스트 이름과 locator 오류 붙여 넣기>
+브라우저 상태: <수동으로 본 화면>
+```
+
+## 자주 잡아야 할 AI 실수
+
+- 목업 지갑만 필요한 작업에 실제 지갑 의존성을 추가하는 것
+- 플레이 크레딧 대신 달러 표시나 USD 표현을 쓰는 것
+- 앱을 실거래 또는 베팅 제품이라고 부르는 것
+- 교육용 UI 대신 Polymarket 브랜딩을 복사하는 것
+- 동작을 고치지 않고 테스트를 삭제해 오류를 숨기는 것
+- 초보자 v1에 필요 없는 데이터베이스나 인증 흐름을 추가하는 것
+
+## 영역별 흔한 오류
+
+| 영역 | 흔한 오류 | 첫 확인 |
 | --- | --- | --- |
-| Scaffold | Next.js command fails | Node version is 20.9+ and `npm install` completed. |
-| UI | Button test cannot find element | The visible button text changed or the component is server-only by mistake. |
-| Engine | Probability moves the wrong way | YES should increase the YES pool; NO should increase the NO pool. |
-| Tests | Vitest import alias fails | Check `tsconfig.json` paths and `vitest.config.ts` alias. |
-| Deploy | Vercel build fails | Re-run `npm run build` locally and compare the first TypeScript error. |
+| 스캐폴드 | Next.js 명령 실패 | Node 버전이 20.9 이상이고 `npm install`이 끝났는지 확인합니다. |
+| UI | 버튼 테스트가 요소를 찾지 못함 | 보이는 버튼 텍스트가 바뀌었거나 컴포넌트가 실수로 서버 전용인지 확인합니다. |
+| 엔진 | 확률이 반대로 움직임 | YES는 YES 풀을 키우고, NO는 NO 풀을 키워야 합니다. |
+| 테스트 | Vitest import alias 실패 | `tsconfig.json` paths와 `vitest.config.ts` alias를 확인합니다. |
+| 배포 | Vercel 빌드 실패 | 로컬에서 `npm run build`를 다시 실행하고 첫 TypeScript 오류를 비교합니다. |

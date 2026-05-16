@@ -1,25 +1,25 @@
-# Safety and Scope
+# 안전과 범위
 
-This project is an educational prediction-market mechanics lab. It is not a financial product and not a production prediction-market service.
+이 프로젝트는 교육용 예측시장 메커니즘 실험실입니다. 금융 상품도, 프로덕션 예측시장 서비스도 아닙니다.
 
-## Hard non-goals
+## 강한 비목표
 
-- No mainnet.
-- No real money, real assets, real betting, or real trading.
-- No real-world asset settlement.
-- No financial, investment, legal, or tax advice.
-- No official Polymarket affiliation.
-- No Polymarket logo, trademark, brand asset, or pixel-perfect copying.
-- No production CLOB, matching engine, custom smart contract, OAuth, or RBAC in v1.
+- 메인넷 없음
+- 실제 돈, 실제 자산, 실제 베팅, 실거래 없음
+- 실제 세계 자산 정산 없음
+- 금융, 투자, 법률, 세무 조언 없음
+- Polymarket 공식 제휴 없음
+- Polymarket 로고, 상표, 브랜드 자산, 픽셀 단위 복제 없음
+- v1에서 프로덕션 CLOB, 매칭 엔진, 커스텀 스마트컨트랙트, OAuth, RBAC 없음
 
-## What the app does instead
+## 대신 앱이 하는 것
 
-- Uses play credits.
-- Uses seeded educational markets.
-- Uses a toy probability model.
-- Uses simulated settlement.
-- Uses a mock wallet experiment that does not connect to a network.
+- 플레이 크레딧을 사용합니다.
+- 시드 학습용 마켓을 사용합니다.
+- 장난감 확률 모델을 사용합니다.
+- 모의 정산을 사용합니다.
+- 네트워크에 연결하지 않는 목업 지갑 실험을 사용합니다.
 
-## Why this boundary matters
+## 이 경계가 중요한 이유
 
-Beginners should learn mechanics safely before touching production-like financial or web3 systems. These constraints keep the 3-week learning path achievable and reduce legal, safety, and setup risk.
+초보자는 프로덕션에 가까운 금융·web3 시스템을 다루기 전에 원리를 안전하게 배워야 합니다. 이 제약은 3주 학습 루트를 현실적으로 만들고 법적, 안전, 설정 리스크를 줄입니다.

@@ -22,7 +22,7 @@ export default async function MarketPage({ params }: MarketPageProps) {
   return (
     <main className="mx-auto min-h-screen max-w-7xl px-6 py-8 md:py-12">
       <Link href="/" className="mb-6 inline-flex text-sm font-bold text-cyan-200 underline underline-offset-4">
-        ← Back to markets
+        ← 마켓 목록으로 돌아가기
       </Link>
       <MarketDetail market={market} />
     </main>

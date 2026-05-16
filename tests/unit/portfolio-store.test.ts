@@ -25,15 +25,15 @@ class MemoryStorage {
 
 const market: Market = {
   slug: "storage-demo",
-  title: "Storage demo",
-  description: "Demo",
-  category: "Test",
+  title: "저장소 데모",
+  description: "데모",
+  category: "테스트",
   closesAt: "2026-06-01",
   status: "open",
   yesPool: 50,
   noPool: 50,
   playVolume: 100,
-  learningGoal: "Test storage",
+  learningGoal: "저장소 테스트",
 };
 
 describe("portfolio-store", () => {
