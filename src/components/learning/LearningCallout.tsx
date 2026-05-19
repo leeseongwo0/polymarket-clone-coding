@@ -5,10 +5,10 @@ interface LearningCalloutProps {
 
 export function LearningCallout({ title, children }: LearningCalloutProps) {
   return (
-    <aside className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm text-cyan-50 shadow-lg shadow-cyan-950/20">
-      <p className="mb-2 text-xs font-bold uppercase tracking-[0.25em] text-cyan-200">학습 체크포인트</p>
-      <h3 className="mb-2 text-lg font-semibold text-white">{title}</h3>
-      <div className="leading-6 text-cyan-50/85">{children}</div>
+    <aside className="rounded-[1.4rem] border border-[var(--pm-hairline)] bg-[var(--pm-blue-soft)] p-5 text-sm text-[var(--pm-body)] shadow-sm">
+      <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-[var(--pm-blue)]">How it works</p>
+      <h3 className="mb-2 text-lg font-black tracking-[-0.02em] text-[var(--pm-ink)]">{title}</h3>
+      <div className="leading-6 text-[var(--pm-body)]">{children}</div>
     </aside>
   );
 }

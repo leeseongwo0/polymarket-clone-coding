@@ -3,10 +3,9 @@ import type { Market } from "@/types/market";
 export const seedMarkets: Market[] = [
   {
     slug: "ai-assistant-weekly-coding",
-    title: "올해 AI 어시스턴트가 초보 개발자의 기본 코딩 도구가 될까요?",
-    description:
-      "AI와 함께 개발하는 방식이 새 개발자의 자연스러운 첫 단계가 되는지 살펴보는 학습용 마켓입니다. 플레이 크레딧만 쓰는 시뮬레이션이며 조언이 아닙니다.",
-    category: "AI와 교육",
+    title: "AI assistants default for beginner coding this year?",
+    description: "Track whether AI coding assistants become the default starting point for new developers.",
+    category: "AI",
     closesAt: "2026-06-30",
     status: "open",
     yesPool: 58,
@@ -16,9 +15,9 @@ export const seedMarkets: Market[] = [
   },
   {
     slug: "nextjs-beginner-deploy",
-    title: "모든 학습자가 3주 차 끝까지 앱을 배포할 수 있을까요?",
-    description: "미래 결과에 대한 자신감을 예측으로 표현하는 방식을 배우기 위한 프로젝트 진행 마켓입니다.",
-    category: "프로젝트 마일스톤",
+    title: "Will every learner deploy by the end of week 3?",
+    description: "A project milestone market for tracking confidence across the 3-week build path.",
+    category: "Milestones",
     closesAt: "2026-07-07",
     status: "open",
     yesPool: 64,
@@ -28,9 +27,9 @@ export const seedMarkets: Market[] = [
   },
   {
     slug: "demo-settled-market",
-    title: "정산 완료 데모: 샘플 기능이 출시되었나요?",
-    description: "정산을 배우기 위한 안전한 완료 예시입니다. 실제 자산 없이 플레이 크레딧 지급 원리를 보여줍니다.",
-    category: "정산 데모",
+    title: "Resolved demo: sample feature shipped?",
+    description: "A finished market that shows how an outcome and payout appear after resolution.",
+    category: "Settlement",
     closesAt: "2026-05-01",
     status: "resolved",
     yesPool: 72,

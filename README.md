@@ -4,6 +4,10 @@
 
 > 안전 경계: 이 프로젝트는 플레이 크레딧만 사용합니다. 메인넷, 실제 돈, 베팅, 실거래, 투자 조언, Polymarket 공식 제휴가 없습니다. Polymarket 로고, 상표, 브랜드 자산도 복사하지 않습니다.
 
+## Polymarket을 먼저 이해하고 싶다면
+
+Polymarket이 무엇인지, 현재 왜 주목받는지, 실제 서비스가 기술적으로 어떻게 작동하는지 궁금하다면 [`docs/polymarket-overview.md`](docs/polymarket-overview.md)를 먼저 읽어보세요. 이 레포의 앱은 그 구조를 실제 거래가 아닌 play-credit 데모로 단순화한 학습용 버전입니다.
+
 ## 무엇을 만들나요?
 
 - 시드 학습용 마켓을 보여주는 Next.js 앱

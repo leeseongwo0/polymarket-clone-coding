@@ -9,33 +9,44 @@ interface MarketCardProps {
 
 export function MarketCard({ market }: MarketCardProps) {
   const yesProbability = calculateYesProbability(market);
-  const statusLabel = market.status === "resolved" ? `정산 완료: ${market.resolvedOutcome?.toUpperCase()}` : "열린 데모";
+  const isResolved = market.status === "resolved";
+  const statusLabel = isResolved ? `Resolved · ${market.resolvedOutcome?.toUpperCase()}` : "Live";
 
   return (
     <Link
       href={`/markets/${market.slug}`}
-      className="group block rounded-3xl border border-white/10 bg-white/[0.06] p-5 transition hover:-translate-y-1 hover:border-cyan-200/50 hover:bg-white/[0.09]"
+      className="group block rounded-[1.4rem] border border-[var(--pm-hairline)] bg-[var(--pm-surface-card)] p-5 shadow-sm transition hover:-translate-y-1 hover:border-[var(--pm-blue)] hover:shadow-[var(--pm-shadow-card)]"
     >
-      <div className="mb-4 flex items-center justify-between gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
-        <span>{market.category}</span>
-        <span className="rounded-full bg-emerald-300/10 px-3 py-1 text-emerald-200">{statusLabel}</span>
+      <div className="mb-5 flex items-center justify-between gap-3">
+        <span className="rounded-full bg-[var(--pm-surface)] px-3 py-1 text-xs font-black text-[var(--pm-muted)]">{market.category}</span>
+        <span
+          className={
+            isResolved
+              ? "rounded-full bg-[var(--pm-warning-soft)] px-3 py-1 text-xs font-black text-[var(--pm-warning)]"
+              : "rounded-full bg-[var(--pm-yes-soft)] px-3 py-1 text-xs font-black text-[var(--pm-yes)]"
+          }
+        >
+          {statusLabel}
+        </span>
       </div>
-      <h2 className="mb-4 text-xl font-bold leading-tight text-white group-hover:text-cyan-100">{market.title}</h2>
-      <p className="mb-5 line-clamp-3 text-sm leading-6 text-slate-300">{market.description}</p>
-      <div className="grid grid-cols-3 gap-3 text-sm">
-        <Metric label="YES" value={formatProbability(yesProbability)} />
-        <Metric label="거래량" value={formatCredits(market.playVolume)} />
-        <Metric label="마감" value={formatShortDate(market.closesAt)} />
+      <h2 className="mb-3 text-xl font-black leading-tight tracking-[-0.03em] text-[var(--pm-ink)] group-hover:text-[var(--pm-blue)]">
+        {market.title}
+      </h2>
+      <p className="mb-5 line-clamp-3 text-sm leading-6 text-[var(--pm-body)]">{market.description}</p>
+      <div className="grid grid-cols-3 gap-2 text-sm">
+        <Metric label="chance" value={formatProbability(yesProbability)} tone="yes" />
+        <Metric label="Vol" value={formatCredits(market.playVolume)} />
+        <Metric label="Ends" value={formatShortDate(market.closesAt)} />
       </div>
     </Link>
   );
 }
 
-function Metric({ label, value }: { label: string; value: string }) {
+function Metric({ label, value, tone }: { label: string; value: string; tone?: "yes" }) {
   return (
-    <div className="rounded-2xl bg-slate-950/40 p-3">
-      <p className="text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">{label}</p>
-      <p className="mt-1 text-sm font-semibold text-white">{value}</p>
+    <div className={tone === "yes" ? "rounded-2xl bg-[var(--pm-yes-soft)] p-3" : "rounded-2xl bg-[var(--pm-surface)] p-3"}>
+      <p className="text-[0.65rem] font-black tracking-[0.12em] text-[var(--pm-muted)]">{label}</p>
+      <p className={tone === "yes" ? "mt-1 text-sm font-black text-[var(--pm-yes)]" : "mt-1 text-sm font-black text-[var(--pm-ink)]"}>{value}</p>
     </div>
   );
 }
